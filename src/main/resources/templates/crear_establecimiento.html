@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<title>
+		Registrar establecimiento
+	</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+		integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+</head>
+
+<body>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+					aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#" th:href="@{/}">Inicio</a>
+			</div>
+		</div>
+	</nav>
+
+	<br>
+	<br>
+
+	<div classs="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+
+				<h1 class="text-center">Registro de establecimientos</h1>
+				<div class="card-body">
+					<form th:action="@{/listadoE}" th:object="${establecimiento}" method="post">
+						<div class="form-group">
+							<label>Nombre establecimiento</label>
+							<input type="text" name="nombre" th:field="*{nombreEstablecimiento}" class="form-control"
+								placeholder="Ingrese nombre del establecimiento" required>
+						</div>
+
+						<div class="form-group">
+							<label>Dirección establecimiento</label>
+							<input type="text" name="direcc" th:field="*{direccionEstablecimiento}" class="form-control"
+								placeholder="Ingrese dirección del establecimiento" required>
+						</div>
+
+						<div class="form-group">
+							<label>Estado de establecimiento</label>
+							<select id="tipo" name="stat" class="form-control" th:field="*{estadoEstablecimiento}" required
+								autofocus="autofocus">
+								<option value="Abierto">Abierto</option>
+								<option value="Cerrado">Cerrado</option>
+								<option value="En construcción">En construcción</option>
+								<option value="Clausurado">Clausurado</option>
+								
+							</select>
+						</div>
+
+				
+
+						<div class="form-group">
+							<label>Aforo de establecimiento</label>
+							<input type="number" name="aforo" th:field="*{aforoEstablecimiento}"
+								class="form-control" placeholder="Ingrese aforo" required>
+						</div>
+
+						<div class="box-footer">
+							<button class="btn btn-success">Guardar producto</button>
+						</div>
+
+					</form>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+		crossorigin="anonymous"></script>
+</body>
+
+</htmlxmlns:th="http: //www.thymeleaf.org">
